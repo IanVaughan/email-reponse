@@ -21,7 +21,7 @@ end
 @gmail = Gmail.connect(AppConf.username, AppConf.password)
 
 emails = @gmail.inbox.find(:to => "cv@ianvaughan.co.uk")
-emails.each {|e| send_reply(emails[0].message)}
+emails.each {|e| send_reply(e.message)}
 
 @gmail.logout
 
