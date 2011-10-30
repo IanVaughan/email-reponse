@@ -11,9 +11,10 @@ def send_reply(email_in)
     bcc "ianrvaughan@gmail.com"
     to email_in.from
     subject email_in.subject
-    body "Attached is a copy of my CV. 
+    body "Thank you for your email.
+Attached is a copy of my CV. 
 Ian (auto reply bot v1.1)"
-#    add_file "/path/to/some_image.jpg"
+    add_file "/media/windows/Documents and Settings/Public/Documents/Dropbox/People/Ian/personal/jobs/CV of Ian Vaughan.docx"
   end
 end
 
