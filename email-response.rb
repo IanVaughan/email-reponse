@@ -5,7 +5,7 @@ require 'gmail'
 require 'logger'
 
 class EmailResponse
-  @@log = Logger.new('log.txt')
+  @@log = Logger.new('email-response.log')
 
   def initialize(name, password)
     log "initialize->name:#{name}, password:#{password}"
@@ -26,7 +26,7 @@ class EmailResponse
 
   private
 
-  def send_reply(email_in)
+  def send_reply email_in
     log "send_reply->email:-\n<<<<\n#{email_in}\n>>>>"
     @gmail.deliver do
       bcc "ianrvaughan@gmail.com"
@@ -40,7 +40,7 @@ class EmailResponse
     log "send_reply->end"
   end
 
-  def log (params)
+  def log params
    @@log.debug params
   end
 
